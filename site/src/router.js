@@ -37,11 +37,15 @@ class Router {
   }
 
   get location() {
-    const pathname = window.location.pathname;
+    const basePath = window.BASE_PATH || "";
+    let pathname = window.location.pathname;
+    if (basePath && pathname.startsWith(basePath)) {
+      pathname = pathname.slice(basePath.length);
+    }
     if (pathname.endsWith("/")) {
       return pathname.slice(0, -1);
     }
-    return pathname;
+    return pathname || "";
   }
 
   didMatch(location, path) {
@@ -84,7 +88,7 @@ class Router {
       this.activateRoute(matchedRoute);
     } else {
       this.activeRoute = null;
-      window.history.pushState("", "", "/");
+      window.history.pushState("", "", (window.BASE_PATH || "") + "/");
     }
   }
 }

@@ -17,7 +17,7 @@ export class LogoutPage extends BaseElement {
     exampleData.disable();
     api.disable();
     storage.clearGroup();
-    window.history.pushState("", "", "/");
+    window.history.pushState("", "", (window.BASE_PATH || "") + "/");
   }
 
   disconnectedCallback() {

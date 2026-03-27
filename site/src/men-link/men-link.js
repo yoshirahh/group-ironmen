@@ -22,7 +22,7 @@ export class MenLink extends BaseElement {
 
   navigate(evt) {
     evt.preventDefault();
-    window.history.pushState("", "", this.href);
+    window.history.pushState("", "", (window.BASE_PATH || "") + this.href);
   }
 }
 

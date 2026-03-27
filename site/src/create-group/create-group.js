@@ -139,7 +139,7 @@ export class CreateGroup extends BaseElement {
         const createdGroup = await result.json();
 
         storage.storeGroup(createdGroup.name, createdGroup.token);
-        window.history.pushState("", "", "/setup-instructions");
+        window.history.pushState("", "", (window.BASE_PATH || "") + "/setup-instructions");
       }
     } catch (err) {
       this.serverError.innerHTML = `Error creating group: ${err}`;

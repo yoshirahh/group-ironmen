@@ -13,7 +13,7 @@ export class DemoPage extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
     storage.storeGroup("@EXAMPLE", "00000000-0000-0000-0000-000000000000");
-    window.history.pushState("", "", "/group");
+    window.history.pushState("", "", (window.BASE_PATH || "") + "/group");
   }
 
   disconnectedCallback() {

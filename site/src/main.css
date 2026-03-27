@@ -49,19 +49,19 @@ h3 {
 @font-face {
   font-family: "rssmall";
   font-display: block;
-  src: url("/fonts/RuneScape-Chat-07.ttf");
+  src: url("{{base_path}}/fonts/RuneScape-Chat-07.ttf");
 }
 
 @font-face {
   font-family: "rsbold";
   font-display: block;
-  src: url("/fonts/RuneScape-Chat-Bold-07.ttf");
+  src: url("{{base_path}}/fonts/RuneScape-Chat-Bold-07.ttf");
 }
 
 @font-face {
   font-family: "rstiny";
   font-display: block;
-  src: url("/fonts/runescape-tiny.ttf");
+  src: url("{{base_path}}/fonts/runescape-tiny.ttf");
 }
 
 .authed-section__main-content {

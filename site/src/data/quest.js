@@ -71,7 +71,7 @@ export class Quest {
   }
 
   static async loadQuests() {
-    const response = await fetch("/data/quest_data.json");
+    const response = await fetch((window.BASE_PATH || "") + "/data/quest_data.json");
     Quest.questData = await response.json();
     Quest.freeToPlayQuests = {};
     Quest.memberQuests = {};

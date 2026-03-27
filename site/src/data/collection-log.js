@@ -68,8 +68,8 @@ class CollectionLog {
   async initLogInfo() {
     if (this.info) return;
     const [collectionLogInfo, collectionLogDuplicates] = await Promise.all([
-      fetch("/data/collection_log_info.json"),
-      fetch("/data/collection_log_duplicates.json"),
+      fetch((window.BASE_PATH || "") + "/data/collection_log_info.json"),
+      fetch((window.BASE_PATH || "") + "/data/collection_log_duplicates.json"),
     ]);
 
     const duplicateMapping = await collectionLogDuplicates.json();

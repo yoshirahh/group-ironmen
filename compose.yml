@@ -1,17 +1,18 @@
 services:
-  group-ironmen-tracker-frontend:
+  frontend:
     image: ghcr.io/yoshirahh/group-ironmen-tracker-frontend
     build:
       context: ./site
       dockerfile: Dockerfile
     environment:
       - HOST_URL=${HOST_URL}
+      - APP_BASE_PATH=${APP_BASE_PATH}
     restart: always
     container_name: group-ironmen-tracker-frontend
     ports:
       - 4000:4000 # replace this if using a docker-compatible reverse proxy like traefik
 
-  group-ironmen-tracker-backend:
+  backend:
     build:
       context: ./server
       dockerfile: Dockerfile

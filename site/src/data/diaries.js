@@ -12,7 +12,7 @@ export class AchievementDiary {
   }
 
   static async loadDiaries() {
-    const response = await fetch("/data/diary_data.json");
+    const response = await fetch((window.BASE_PATH || "") + "/data/diary_data.json");
     AchievementDiary.diaries = await response.json();
   }
 

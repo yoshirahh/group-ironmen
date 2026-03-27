@@ -75,7 +75,7 @@ export class PlayerEquipment extends BaseElement {
         el.innerHTML = "";
         el.appendChild(itemEl);
       } else {
-        el.innerHTML = `<img loading="lazy" src="/ui/${this.emptySlotImages[position]}" />`;
+        el.innerHTML = `<img loading="lazy" src="${(window.BASE_PATH || "")}/ui/${this.emptySlotImages[position]}" />`;
       }
     }
   }

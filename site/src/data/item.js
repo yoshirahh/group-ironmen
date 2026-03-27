@@ -95,7 +95,7 @@ export class Item {
   }
 
   static async loadItems() {
-    const response = await fetch("/data/item_data.json");
+    const response = await fetch((window.BASE_PATH || "") + "/data/item_data.json");
     Item.itemDetails = await response.json();
     for (const [itemId, itemDetails] of Object.entries(Item.itemDetails)) {
       const stacks = itemDetails.stacks;

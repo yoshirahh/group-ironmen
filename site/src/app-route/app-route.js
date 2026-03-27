@@ -41,7 +41,7 @@ export class AppRoute extends BaseElement {
   enable() {
     const redirect = this.getAttribute("route-redirect");
     if (redirect) {
-      window.history.pushState("", "", redirect);
+      window.history.pushState("", "", (window.BASE_PATH || "") + redirect);
       return;
     }
     if (this.active) return;

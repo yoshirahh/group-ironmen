@@ -112,6 +112,9 @@ const htmlBuildPlugin = {
       const jsContent = await fs.promises.readFile('public/app.js', 'utf8');
       htmlFile = htmlFile.replace("{{js}}", jsContent);
 
+      const basePath = process.env.APP_BASE_PATH || "";
+      htmlFile = htmlFile.split("{{base_path}}").join(basePath);
+
       await fs.promises.writeFile("public/index.html", htmlFile);
     });
   }

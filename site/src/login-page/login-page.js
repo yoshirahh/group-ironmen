@@ -44,7 +44,7 @@ export class LoginPage extends BaseElement {
       const response = await api.amILoggedIn();
       if (response.ok) {
         storage.storeGroup(name, token);
-        window.history.pushState("", "", "/group");
+        window.history.pushState("", "", (window.BASE_PATH || "") + "/group");
       } else {
         if (response.status === 401) {
           this.error.innerHTML = "Group name or token is incorrect";
