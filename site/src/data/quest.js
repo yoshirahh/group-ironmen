@@ -26,20 +26,21 @@ export class Quest {
   }
 
   get icon() {
+    const basePath = window.BASE_PATH || "";
     const difficulty = this.difficulty;
     switch (difficulty) {
       case "Novice":
-        return "/icons/3399-0.png";
+        return basePath + "/icons/3399-0.png";
       case "Intermediate":
-        return "/icons/3400-0.png";
+        return basePath + "/icons/3400-0.png";
       case "Experienced":
-        return "/icons/3402-0.png";
+        return basePath + "/icons/3402-0.png";
       case "Master":
-        return "/icons/3403-0.png";
+        return basePath + "/icons/3403-0.png";
       case "Grandmaster":
-        return "/icons/3404-0.png";
+        return basePath + "/icons/3404-0.png";
       case "Special":
-        return "/icons/3404-0.png";
+        return basePath + "/icons/3404-0.png";
     }
 
     console.error(`Unknown quest difficulty for icon ${difficulty}`);

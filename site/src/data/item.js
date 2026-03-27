@@ -23,7 +23,7 @@ export class Item {
         }
       }
     }
-    return `/icons/items/${imageId}.webp`;
+    return (window.BASE_PATH || "") + `/icons/items/${imageId}.webp`;
   }
 
   static itemName(itemId) {
