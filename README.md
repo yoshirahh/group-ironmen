@@ -31,13 +31,13 @@ Prerequisites
 
 ### With docker-compose
 
-Copy the `docker-compose.yml`, `.env.example`, and `schema.sql` (exists in `server/src/sql`) files onto your server.
+Copy the `compose.yml`, `.env.example`, and `schema.sql` (exists in `server/src/sql`) files onto your server.
 
 Copy the contents of `.env.example` into a new file named `.env` in the same directory and fill it with your secrets.
 
 The `.env` file explains what should go into each secret.
 
-The `docker-compose.yml` has a line that takes the path to the `schema.sql`. Make sure to update this to the relative or absolute path of the file on your server.
+The `compose.yml` has a line that takes the path to the `schema.sql`. Make sure to update this to the relative or absolute path of the file on your server.
 
 After you have set up the `.env` file and `schema.sql` path, you can run `docker-compose up -d` and this will spin up both the frontend and backend. The backend should be available on port 5000 and the frontend on port 4000, although these can be changed in the docker-compose file.
 
